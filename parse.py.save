@@ -1,0 +1,204 @@
+#!/usr/bin/env python3
+import re, json
+
+with open("top440.txt", "r", encoding="utf-8") as f:
+    raw = f.read()
+
+# Жанровые заголовки
+GENRES = [
+    "Hip-Hop",
+    "Indie / Twee / Jangle pop",
+    "Post-Punk / Rock / Experimental",
+    "Classic Rock / Metal",
+    "Electronic / Ambient /",
+    "Mainstream / Pop",
+    "Russian",
+]
+
+lines = raw.split("\n")
+
+albums = []
+current_genre = "Unknown"
+current_artist = None
+current_title = None
+current_review_lines = []
+album_id = 0
+
+def save_current():
+    global album_id, current_artist, current_title, current_review_lines
+    if current_artist and current_title:
+        album_id += 1
+        review = "\n".join(current_review_lines).strip()
+        if not review:
+            review = None
+        albums.append({
+            "id": f"a{album_id:03d}",
+            "artist": current_artist.strip(),
+            "title": current_title.strip(),
+            "genre": current_genre.strip(),
+            "review": review,
+        })
+    elif current_artist and not current_title:
+        # artist-only entry (no album specified)
+        album_id += 1
+        review = "\n".join(current_review_lines).strip()
+        if not review:
+            review = None
+        albums.append({
+            "id": f"a{album_id:03d}",
+            "artist": current_artist.strip(),
+            "title": "",
+            "genre": current_genre.strip(),
+            "review": review,
+        })
+    current_artist = None
+    current_title = None
+    current_review_lines = []
+
+def is_genre_header(line):
+    stripped = line.strip()
+    for g in GENRES:
+        if stripped == g:
+            return g
+    return None
+
+def parse_album_line(line):
+    """Try to extract artist and title from a line."""
+    stripped = line.strip()
+    if not stripped:
+        return None
+    
+    # Skip if it looks like a review (starts lowercase, or is very long prose)
+    # But careful - some entries are lowercase like "cypress hill"
+    
+    # Pattern 1: "Artist - Title" or "Artist – Title" or "Artist — Title"
+    for sep in [" - ", " – ", " — "]:
+        if sep in stripped:
+            parts = stripped.split(sep, 1)
+            if len(parts) == 2 and len(parts[0]) > 0 and len(parts[1]) > 0:
+                artist = parts[0].strip()
+                title = parts[1].strip()
+                # Clean up parenthetical years/labels
+                title = re.sub(r'\s*$(?:Hyperdub,?\s*)?\d{4}$\s*$', '', title)
+                title = re.sub(r'\s*\(\s*$', '', title)
+                title = re.sub(r'\s*\(\d+\s*$', '', title)
+                return (artist, title)
+    
+    # Pattern 2: "Title Artist" - known patterns (reversed order in file)
+    # We'll handle these as artist-only if no separator found
+    # but first check if it's a review line
+    
+    # If line is > 100 chars, it's probably a review
+    if len(stripped) > 100:
+        return None
+    
+    # If line starts with common review words, skip
+    review_starts = [
+        "Помните", "Удивительно", "Для меня", "По большому", "Это один",
+        "Если вы", "То, что", "Три диска", "Конечно", "Серьезно",
+        "Примерно", "Можно ли", "Каким-то", "Один из", "Отличн",
+        "Суть в том", "Холодный", "Итак,", "Многие люди", "Думаю",
+        "Альбом", "Ребята", "Группа", "Пост-панк", "Это определенно",
+        "Сейчас,", "Игги", "Независимо", "Гитары", "Превосходное",
+        "Этот альбом", "Как по мне", "Кульминац", "Clams Casino –",
+        "Есть такие", "Cовершенно", "Проект британ", "Прежде всего",
+        "Чрезвычайно", "На самом деле", "Ретро-чувство", "Have fun",
+        "Темнее", "Сокровище", "Погруженный", "Начиная альбом",
+        "Cимбиоз", "предустановленные", "Отличный альбом", "Слишком",
+        "Royal Blood -", "Черт возьми", "Способность", "Каждая песня",
+        "Пожалуйста", "Он затрагивает", "Дело не в", "Форма основ",
+        "Если слушать", "Музыка часто", "Как и любовь", "Вневременные",
+        "Нет ни грусти", "Песни, как", "Ты чувствуешь",
+        "На дебютном", "Нельзя сказать", "Отлично годится",
+        "Длительность", "Одноименный", "В любом случае", "Итого",
+        "Такой вот", "Давайте на будущее",
+    ]
+    for rs in review_starts:
+        if stripped.startswith(rs):
+            return None
+    
+    # If line starts with tab or lots of spaces, probably review
+    if line.startswith("\t") or line.startswith("   "):
+        return None
+    
+    # Check if it's just a short entry (artist only or "Album Artist" format)
+    # These are valid album entries
+    return ("", stripped)  # We'll figure out artist/title later
+
+i = 0
+while i < len(lines):
+    line = lines[i]
+    stripped = line.strip()
+    
+    # Check genre header
+    g = is_genre_header(stripped)
+    if g:
+        save_current()
+        current_genre = g
+        i += 1
+        continue
+    
+    # Empty line - might separate entries
+    if not stripped:
+        i += 1
+        continue
+    
+    # Try to parse as album
+    result = parse_album_line(line)
+    
+    if result:
+        artist, title = result
+        if artist:  # Pattern 1 matched (has separator)
+            save_current()
+            current_artist = artist
+            current_title = title
+            current_review_lines = []
+        elif title:  # No separator - could be album entry or review
+            if current_artist and len(stripped) > 60:
+                # Probably continuation of review
+                current_review_lines.append(stripped)
+            else:
+                save_current()
+                # Try to guess: is it "Title Artist" or just "Artist"?
+                current_artist = stripped
+                current_title = ""
+                current_review_lines = []
+    else:
+        # It's a review line
+        if current_artist:
+            current_review_lines.append(stripped)
+    
+    i += 1
+
+save_current()
+
+# Generate TypeScript
+ts = """export type Album = {
+  id: string;
+  artist: string;
+  title: string;
+  genre: string;
+  review: string | null;
+};
+
+export const albums: Album[] = [
+"""
+
+for a in albums:
+    esc = lambda s: s.replace("\\", "\\\\").replace("`", "\\`").replace("${", "\\${") if s else ""
+    rev = f"`{esc(a['review'])}`" if a['review'] else "null"
+    ts += f'  {{ id: "{a["id"]}", artist: `{esc(a["artist"])}`, title: `{esc(a["title"])}`, genre: `{esc(a["genre"])}`, review: {rev} }},\n'
+
+ts += "];\n"
+
+with open("src/data/albums.ts", "w", encoding="utf-8") as f:
+    f.write(ts)
+
+print(f"Done! {len(albums)} albums written to src/data/albums.ts")
+
+# Also write JSON for debugging
+with open("albums_debug.json", "w", encoding="utf-8") as f:
+    json.dump(albums, f, ensure_ascii=False, indent=2)
+
+print(f"Debug JSON written to albums_debug.json")
+
