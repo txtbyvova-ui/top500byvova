@@ -453,7 +453,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row sm:items-center gap-4">
             <div className="flex-shrink-0">
               <h1 className="text-xl sm:text-2xl font-bold text-white tracking-wider">
-                DJ VCR TOP 500
+                Vova Egorov TOP 500
               </h1>
               <p className="text-neutral-600 text-xs mt-0.5">
                 {filtered.length} of {albums.length} albums
