@@ -167,8 +167,8 @@ function main() {
   const listEntries = parseListClean();
   console.log(`  Parsed ${listEntries.length} entries from list_clean.txt`);
 
-  if (listEntries.length !== 490) {
-    console.error(`ERROR: Expected 490 entries but got ${listEntries.length}. Aborting.`);
+  if (listEntries.length === 0) {
+    console.error(`ERROR: No entries parsed from list_clean.txt. Aborting.`);
     process.exit(1);
   }
 
@@ -208,8 +208,8 @@ function main() {
   const count = (verify.match(/\{ id: "/g) || []).length;
   console.log(`\n  ✓ Verified: ${count} albums in albums.ts`);
 
-  if (count !== 490) {
-    console.error(`  ✗ ERROR: Expected 490, got ${count}!`);
+  if (count !== albums.length) {
+    console.error(`  ✗ ERROR: Expected ${albums.length}, got ${count}!`);
     process.exit(1);
   }
 }

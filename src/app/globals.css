@@ -25,6 +25,26 @@ body {
   border-radius: 3px;
 }
 
+/* Hide scrollbar for genre filter bar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Genre section fade transition */
+.genre-section {
+  transition: opacity 0.3s ease;
+}
+.genre-section-hidden {
+  display: none;
+}
+.genre-section-visible {
+  opacity: 1;
+}
+
 /* Prevent body scroll when modal is open */
 body.modal-open {
   overflow: hidden;

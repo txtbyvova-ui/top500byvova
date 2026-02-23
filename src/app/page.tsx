@@ -3,8 +3,78 @@
 import { useState, useEffect, useCallback, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { albums, Album } from "../data/albums";
+import { albumTags } from "../data/albumTags"; // Импортируем теги
 
-// Generate a deterministic color from a string
+// ── CONSTANTS ───────────────────────────────────────────────
+
+const MOODS = [
+  { label: "Sad", emoji: "😢" },
+  { label: "Euphoric", emoji: "🤩" },
+  { label: "Melancholic", emoji: "💜" },
+  { label: "Angry", emoji: "😤" },
+  { label: "Deep", emoji: "🧠" },
+  { label: "Trippy", emoji: "🍄" },
+  { label: "Nostalgic", emoji: "📼" },
+  { label: "Eerie", emoji: "👻" },
+];
+
+const TIMES = [
+  { label: "Night", emoji: "🌙" },
+  { label: "Morning", emoji: "🌅" },
+  { label: "Day", emoji: "☀️" },
+  { label: "Sunset", emoji: "🌇" },
+  { label: "Late Night", emoji: "🦉" },
+];
+
+const ENERGIES = [
+  { label: "Calm", emoji: "🧘" },
+  { label: "Cozy", emoji: "🏠" },
+  { label: "Groovy", emoji: "🕺" },
+  { label: "Energetic", emoji: "⚡" },
+  { label: "Aggressive", emoji: "💥" },
+  { label: "Dark", emoji: "🖤" },
+  { label: "Dreamy", emoji: "💭" },
+  { label: "Weird", emoji: "🎭" },
+];
+
+const GENRE_ORDER = [
+  "Hip-Hop",
+  "Electronic",
+  "Post-Punk / New Wave / Goth / Coldwave",
+  "Metal / Extreme / Hardcore",
+  "Indie / Alternative",
+  "Classic Rock / Funk / Soul / R&B",
+  "Shoegaze / Dream Pop / Post-Rock",
+  "Experimental / Art Rock / Krautrock",
+  "Russian",
+  "Dub / Reggae / World / Global",
+  "Ambient / Drone / Modern Classical",
+  "Pop / Mainstream / OST",
+  "Japanese",
+  "Jazz",
+  "Other",
+];
+
+const GENRE_LABELS: Record<string, string> = {
+  "Hip-Hop": "Hip-Hop",
+  "Electronic": "Electronic",
+  "Post-Punk / New Wave / Goth / Coldwave": "Post-Punk",
+  "Metal / Extreme / Hardcore": "Metal",
+  "Indie / Alternative": "Indie",
+  "Classic Rock / Funk / Soul / R&B": "Classic Rock",
+  "Shoegaze / Dream Pop / Post-Rock": "Shoegaze",
+  "Experimental / Art Rock / Krautrock": "Experimental",
+  "Russian": "Russian",
+  "Dub / Reggae / World / Global": "Dub/Reggae/World",
+  "Ambient / Drone / Modern Classical": "Ambient",
+  "Pop / Mainstream / OST": "Pop/OST",
+  "Japanese": "Japanese",
+  "Jazz": "Jazz",
+  "Other": "Other",
+};
+
+// ── UTILS ───────────────────────────────────────────────────
+
 function stringToColor(str: string): string {
   let hash = 0;
   for (let i = 0; i < str.length; i++) {
@@ -14,7 +84,6 @@ function stringToColor(str: string): string {
   return `hsl(${hue}, 45%, 35%)`;
 }
 
-// Get initials from artist name (max 2 chars)
 function getInitials(name: string): string {
   return name
     .split(/[\s&]+/)
@@ -25,7 +94,8 @@ function getInitials(name: string): string {
     .toUpperCase();
 }
 
-// SVG icons for streaming services
+// ── ICONS & LINKS ───────────────────────────────────────────
+
 const StreamingIcons: Record<string, React.ReactNode> = {
   Spotify: (
     <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
@@ -59,7 +129,6 @@ const StreamingIcons: Record<string, React.ReactNode> = {
   ),
 };
 
-// Build streaming search URLs
 function getStreamingLinks(artist: string, title: string) {
   const q = encodeURIComponent(`${artist} ${title}`);
   return [
@@ -72,7 +141,8 @@ function getStreamingLinks(artist: string, title: string) {
   ];
 }
 
-// ── Album Card ──────────────────────────────────────────────
+// ── COMPONENTS ──────────────────────────────────────────────
+
 function AlbumCard({
   album,
   index,
@@ -88,12 +158,7 @@ function AlbumCard({
   const hasCover = !!album.cover && !imgError;
 
   return (
-    <motion.div
-      layout
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, scale: 0.95 }}
-      transition={{ duration: 0.3, delay: Math.min(index * 0.02, 0.5) }}
+    <div
       onClick={onClick}
       className="group cursor-pointer"
     >
@@ -119,7 +184,6 @@ function AlbumCard({
             </span>
           </div>
         )}
-        {/* Hover overlay */}
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
           <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm font-medium tracking-wide">
             View
@@ -134,11 +198,10 @@ function AlbumCard({
           {album.title}
         </p>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
-// ── Album Modal ─────────────────────────────────────────────
 function AlbumModal({
   album,
   onClose,
@@ -152,7 +215,9 @@ function AlbumModal({
   const [imgError, setImgError] = useState(false);
   const hasCover = !!album.cover && !imgError;
 
-  // Close on Escape
+  // Get tags for this album
+  const tags = albumTags[album.id];
+
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -180,113 +245,178 @@ function AlbumModal({
         exit={{ opacity: 0, scale: 0.95, y: 20 }}
         transition={{ duration: 0.25, ease: "easeOut" }}
         onClick={(e) => e.stopPropagation()}
-        className="bg-neutral-900 border border-neutral-800 rounded-2xl max-w-lg w-full overflow-hidden"
+        className="bg-neutral-900 border border-neutral-800 rounded-2xl max-w-lg w-full overflow-hidden flex flex-col max-h-[90vh]"
       >
-        {/* Cover */}
-        {hasCover ? (
-          <img
-            src={album.cover}
-            alt={`${album.artist} — ${album.title}`}
-            onError={() => setImgError(true)}
-            loading="lazy"
-            decoding="async"
-            width={250}
-            height={250}
-            className="w-full aspect-square object-cover"
-          />
-        ) : (
-          <div
-            className="w-full aspect-square flex items-center justify-center"
-            style={{ background: bg }}
-          >
-            <span className="text-white/50 font-bold text-7xl select-none tracking-widest">
-              {initials}
-            </span>
+        <div className="overflow-y-auto">
+          {/* Cover */}
+          {hasCover ? (
+            <img
+              src={album.cover}
+              alt={`${album.artist} — ${album.title}`}
+              onError={() => setImgError(true)}
+              loading="lazy"
+              decoding="async"
+              width={250}
+              height={250}
+              className="w-full aspect-square object-cover"
+            />
+          ) : (
+            <div
+              className="w-full aspect-square flex items-center justify-center"
+              style={{ background: bg }}
+            >
+              <span className="text-white/50 font-bold text-7xl select-none tracking-widest">
+                {initials}
+              </span>
+            </div>
+          )}
+
+          {/* Info */}
+          <div className="p-6">
+            <h2 className="text-white text-2xl font-bold leading-tight">
+              {album.artist}
+            </h2>
+            <h3 className="text-neutral-400 text-lg mt-1">{album.title}</h3>
+
+            {/* Tags Display in Modal */}
+            {tags && (
+              <div className="mt-4 flex flex-wrap gap-2">
+                {tags.mood.map(t => (
+                  <span key={t} className="text-xs px-2 py-1 rounded bg-blue-900/30 text-blue-200 border border-blue-800/50">
+                    {t}
+                  </span>
+                ))}
+                {tags.time.map(t => (
+                  <span key={t} className="text-xs px-2 py-1 rounded bg-orange-900/30 text-orange-200 border border-orange-800/50">
+                    {t}
+                  </span>
+                ))}
+                {tags.energy.map(t => (
+                  <span key={t} className="text-xs px-2 py-1 rounded bg-purple-900/30 text-purple-200 border border-purple-800/50">
+                    {t}
+                  </span>
+                ))}
+              </div>
+            )}
+
+            {/* Streaming Links */}
+            <div className="flex items-center gap-2 mt-5">
+              {links.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={link.name}
+                  className="flex items-center justify-center w-10 h-10 rounded-full transition-all duration-200 hover:scale-110 hover:brightness-125"
+                  style={{
+                    background: `${link.color}18`,
+                    color: link.color,
+                    border: `1px solid ${link.color}25`,
+                  }}
+                >
+                  {StreamingIcons[link.name]}
+                </a>
+              ))}
+            </div>
+
+            {/* Review placeholder */}
+            <div className="mt-6 pt-5 border-t border-neutral-800">
+              <p className="text-neutral-600 text-sm italic">
+                No review yet.
+              </p>
+            </div>
+
+            {/* Close button */}
+            <button
+              onClick={onClose}
+              className="mt-4 w-full py-2.5 bg-neutral-800 hover:bg-neutral-700 text-neutral-300 rounded-lg text-sm font-medium transition-colors duration-200"
+            >
+              Close
+            </button>
           </div>
-        )}
-
-        {/* Info */}
-        <div className="p-6">
-          <h2 className="text-white text-2xl font-bold leading-tight">
-            {album.artist}
-          </h2>
-          <h3 className="text-neutral-400 text-lg mt-1">{album.title}</h3>
-
-          {/* Streaming Links */}
-          <div className="flex items-center gap-2 mt-5">
-            {links.map((link) => (
-              <a
-                key={link.name}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                title={link.name}
-                className="flex items-center justify-center w-10 h-10 rounded-full transition-all duration-200 hover:scale-110 hover:brightness-125"
-                style={{
-                  background: `${link.color}18`,
-                  color: link.color,
-                  border: `1px solid ${link.color}25`,
-                }}
-              >
-                {StreamingIcons[link.name]}
-              </a>
-            ))}
-          </div>
-
-          {/* Review placeholder */}
-          <div className="mt-6 pt-5 border-t border-neutral-800">
-            <p className="text-neutral-600 text-sm italic">
-              No review yet.
-            </p>
-          </div>
-
-          {/* Close button */}
-          <button
-            onClick={onClose}
-            className="mt-4 w-full py-2.5 bg-neutral-800 hover:bg-neutral-700 text-neutral-300 rounded-lg text-sm font-medium transition-colors duration-200"
-          >
-            Close
-          </button>
         </div>
       </motion.div>
     </motion.div>
   );
 }
 
-// ── Genre order ─────────────────────────────────────────────
-const GENRE_ORDER = [
-  "Hip-Hop",
-  "Electronic",
-  "Post-Punk / New Wave / Goth / Coldwave",
-  "Metal / Extreme / Hardcore",
-  "Indie / Alternative",
-  "Classic Rock / Funk / Soul / R&B",
-  "Shoegaze / Dream Pop / Post-Rock",
-  "Experimental / Art Rock / Krautrock",
-  "Russian",
-  "Dub / Reggae / World / Global",
-  "Ambient / Drone / Modern Classical",
-  "Pop / Mainstream / OST",
-  "Japanese",
-  "Jazz",
-  "Other",
-];
+// ── MAIN PAGE ───────────────────────────────────────────────
 
-// ── Main Page ───────────────────────────────────────────────
 export default function Home() {
   const [search, setSearch] = useState("");
   const [selected, setSelected] = useState<Album | null>(null);
+  
+  // Filter States
+  const [selectedGenres, setSelectedGenres] = useState<Set<string>>(new Set());
+  const [selectedMoods, setSelectedMoods] = useState<Set<string>>(new Set());
+  const [selectedTimes, setSelectedTimes] = useState<Set<string>>(new Set());
+  const [selectedEnergies, setSelectedEnergies] = useState<Set<string>>(new Set());
 
+  // Helper to toggle a set
+  const toggleSet = (set: Set<string>, val: string, update: (s: Set<string>) => void) => {
+    const next = new Set(set);
+    if (next.has(val)) next.delete(val);
+    else next.add(val);
+    update(next);
+  };
+
+  // Reset all filters
+  const resetFilters = () => {
+    setSelectedGenres(new Set());
+    setSelectedMoods(new Set());
+    setSelectedTimes(new Set());
+    setSelectedEnergies(new Set());
+  };
+
+  const hasFilters = selectedGenres.size > 0 || selectedMoods.size > 0 || selectedTimes.size > 0 || selectedEnergies.size > 0;
+
+  // Filter Logic
   const filtered = albums.filter((a) => {
-    if (!search) return true;
-    const q = search.toLowerCase();
-    return (
-      a.artist.toLowerCase().includes(q) ||
-      a.title.toLowerCase().includes(q)
-    );
+    // 1. Search
+    if (search) {
+      const q = search.toLowerCase();
+      if (!a.artist.toLowerCase().includes(q) && !a.title.toLowerCase().includes(q)) {
+        return false;
+      }
+    }
+
+    // 2. Genre Filter (OR logic)
+    if (selectedGenres.size > 0 && !selectedGenres.has(a.genre || "Other")) {
+      return false;
+    }
+
+    // Get tags for the album
+    const tags = albumTags[a.id];
+    // If we have filters but no tags for this album, exclude it (unless genre only)
+    if ((selectedMoods.size > 0 || selectedTimes.size > 0 || selectedEnergies.size > 0) && !tags) {
+      return false;
+    }
+
+    if (tags) {
+      // 3. Mood Filter (OR logic within mood, AND with others)
+      if (selectedMoods.size > 0) {
+        const hasMood = tags.mood.some(m => selectedMoods.has(m));
+        if (!hasMood) return false;
+      }
+
+      // 4. Time Filter
+      if (selectedTimes.size > 0) {
+        const hasTime = tags.time.some(t => selectedTimes.has(t));
+        if (!hasTime) return false;
+      }
+
+      // 5. Energy Filter
+      if (selectedEnergies.size > 0) {
+        const hasEnergy = tags.energy.some(e => selectedEnergies.has(e));
+        if (!hasEnergy) return false;
+      }
+    }
+
+    return true;
   });
 
-  // Group filtered albums by genre in defined order
+  // Group filtered albums by genre
   const grouped = useMemo(() => {
     const map = new Map<string, Album[]>();
     for (const genre of GENRE_ORDER) {
@@ -302,7 +432,6 @@ export default function Home() {
         other.push(album);
       }
     }
-    // Return only non-empty groups
     return GENRE_ORDER
       .filter((g) => (map.get(g)?.length ?? 0) > 0)
       .map((g) => ({ genre: g, albums: map.get(g)! }));
@@ -319,7 +448,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#0a0a0a]">
       {/* Header */}
-      <header className="sticky top-0 z-40 bg-[#0a0a0a]/90 backdrop-blur-md border-b border-neutral-800/50">
+      <header className="bg-[#0a0a0a] border-b border-neutral-800/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
           <div className="flex flex-col sm:flex-row sm:items-center gap-4">
             <div className="flex-shrink-0">
@@ -343,31 +472,143 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Album Grid — grouped by genre */}
+      {/* ── FILTER BAR (Sticky) ── */}
+      <div className="sticky top-0 z-50 bg-[#0a0a0a]/95 backdrop-blur-md border-b border-neutral-800/50 shadow-2xl">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-col gap-3">
+          
+          {/* Row 1: Genres */}
+          <div className="flex items-center gap-3 overflow-x-auto no-scrollbar pb-1">
+            <button
+              onClick={() => setSelectedGenres(new Set())}
+              className={`flex-shrink-0 px-4 py-1.5 rounded-full text-sm font-medium border transition-all duration-200 ${
+                selectedGenres.size === 0
+                  ? "bg-white text-black border-white"
+                  : "text-gray-400 border-[#333] hover:border-neutral-500"
+              }`}
+            >
+              All Genres
+            </button>
+            {GENRE_ORDER.map((genre) => (
+              <button
+                key={genre}
+                onClick={() => toggleSet(selectedGenres, genre, setSelectedGenres)}
+                className={`flex-shrink-0 px-4 py-1.5 rounded-full text-sm font-medium border transition-all duration-200 ${
+                  selectedGenres.has(genre)
+                    ? "bg-white text-black border-white"
+                    : "text-gray-400 border-[#333] hover:border-neutral-500"
+                }`}
+              >
+                {GENRE_LABELS[genre] || genre}
+              </button>
+            ))}
+          </div>
+
+          <div className="border-t border-neutral-800/50"></div>
+
+          {/* Row 2: Mood */}
+          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1">
+            <span className="text-[10px] font-bold text-neutral-600 uppercase tracking-wider w-12 flex-shrink-0">Mood</span>
+            {MOODS.map((m) => (
+              <button
+                key={m.label}
+                onClick={() => toggleSet(selectedMoods, m.label, setSelectedMoods)}
+                className={`flex-shrink-0 px-3 py-1 rounded-full text-xs font-medium border transition-all duration-200 flex items-center gap-1.5 ${
+                  selectedMoods.has(m.label)
+                    ? "bg-blue-100 text-blue-900 border-blue-200"
+                    : "text-neutral-400 border-[#2a2a2a] hover:border-neutral-600 bg-[#111]"
+                }`}
+              >
+                <span>{m.emoji}</span> {m.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Row 3: Time */}
+          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1">
+            <span className="text-[10px] font-bold text-neutral-600 uppercase tracking-wider w-12 flex-shrink-0">Time</span>
+            {TIMES.map((t) => (
+              <button
+                key={t.label}
+                onClick={() => toggleSet(selectedTimes, t.label, setSelectedTimes)}
+                className={`flex-shrink-0 px-3 py-1 rounded-full text-xs font-medium border transition-all duration-200 flex items-center gap-1.5 ${
+                  selectedTimes.has(t.label)
+                    ? "bg-orange-100 text-orange-900 border-orange-200"
+                    : "text-neutral-400 border-[#2a2a2a] hover:border-neutral-600 bg-[#111]"
+                }`}
+              >
+                <span>{t.emoji}</span> {t.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Row 4: Energy */}
+          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1 relative">
+             <span className="text-[10px] font-bold text-neutral-600 uppercase tracking-wider w-12 flex-shrink-0">Energy</span>
+            {ENERGIES.map((e) => (
+              <button
+                key={e.label}
+                onClick={() => toggleSet(selectedEnergies, e.label, setSelectedEnergies)}
+                className={`flex-shrink-0 px-3 py-1 rounded-full text-xs font-medium border transition-all duration-200 flex items-center gap-1.5 ${
+                  selectedEnergies.has(e.label)
+                    ? "bg-purple-100 text-purple-900 border-purple-200"
+                    : "text-neutral-400 border-[#2a2a2a] hover:border-neutral-600 bg-[#111]"
+                }`}
+              >
+                <span>{e.emoji}</span> {e.label}
+              </button>
+            ))}
+
+            {/* Reset Button (shows if any filter active) */}
+            {hasFilters && (
+               <button 
+                  onClick={resetFilters}
+                  className="ml-auto sticky right-0 flex-shrink-0 px-3 py-1 text-xs text-red-400 hover:text-red-300 bg-red-900/20 rounded border border-red-900/50 backdrop-blur-xl"
+               >
+                 ✕ Reset
+               </button>
+            )}
+          </div>
+
+        </div>
+      </div>
+
+      {/* Album Grid */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 py-6">
         {grouped.length > 0 ? (
-          grouped.map(({ genre, albums: genreAlbums }) => (
-            <section key={genre} className="mb-10">
-              <h2 className="text-white text-xl sm:text-2xl font-bold mt-6 mb-4">
-                {genre}
-              </h2>
-              <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3 sm:gap-4">
-                {genreAlbums.map((album, i) => (
-                  <AlbumCard
-                    key={album.id}
-                    album={album}
-                    index={i}
-                    onClick={() => handleSelect(album)}
-                  />
-                ))}
-              </div>
-            </section>
-          ))
+          grouped.map(({ genre, albums: genreAlbums }) => {
+            // If specific genres selected, only show those
+            if (selectedGenres.size > 0 && !selectedGenres.has(genre)) return null;
+            
+            return (
+              <section key={genre} className="mb-10 animate-fadeIn">
+                <h2 className="text-white text-xl sm:text-2xl font-bold mt-6 mb-4 flex items-center gap-3">
+                  {genre}
+                  <span className="text-neutral-600 text-sm font-normal">{genreAlbums.length}</span>
+                </h2>
+                <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3 sm:gap-4">
+                  {genreAlbums.map((album, i) => (
+                    <AlbumCard
+                      key={album.id}
+                      album={album}
+                      index={i}
+                      onClick={() => handleSelect(album)}
+                    />
+                  ))}
+                </div>
+              </section>
+            );
+          })
         ) : (
-          <div className="text-center py-20">
-            <p className="text-neutral-600 text-lg">
-              No albums found for &ldquo;{search}&rdquo;
+          <div className="text-center py-32">
+            <p className="text-neutral-500 text-lg">
+              No albums match this mood combination 🌑
             </p>
+            <button 
+              onClick={resetFilters}
+              className="mt-4 px-6 py-2 bg-white text-black rounded-full text-sm font-medium hover:bg-neutral-200"
+            >
+              Clear Filters
+            </button>
           </div>
         )}
       </main>
