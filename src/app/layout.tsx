@@ -14,7 +14,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "DJ VCR TOP 500",
+  title: "Vova Egorov TOP 500",
   description: "A curated collection of 440 essential albums",
 };
 
