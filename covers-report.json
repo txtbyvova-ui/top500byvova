@@ -1,0 +1,950 @@
+{
+  "date": "2026-05-02T20:11:32.572Z",
+  "mode": "revalidate-all",
+  "unchanged": 380,
+  "fixed": [],
+  "revalidated": [
+    {
+      "id": "a005",
+      "artist": "Wu-Tang Clan",
+      "title": "Enter the Wu-Tang (36 Chambers)",
+      "oldUrl": "https://coverartarchive.org/release-group/610fb60f-900a-3c42-ac7d-f6b6aa8035f9/front-250",
+      "newUrl": "/covers/a005.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a019",
+      "artist": "The Notorious B.I.G.",
+      "title": "Ready to Die",
+      "oldUrl": "https://coverartarchive.org/release-group/5afcfeac-118a-35e6-af0d-35ec9003354d/front-250",
+      "newUrl": "/covers/a019.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a071",
+      "artist": "Sixteen Horsepower",
+      "title": "Low Estate",
+      "oldUrl": "https://coverartarchive.org/release-group/abdd9af0-9d5d-3e83-a87c-8b38cf69c76c/front-250",
+      "newUrl": "/covers/a071.jpg",
+      "source": "itunes"
+    },
+    {
+      "id": "a074",
+      "artist": "Spiritual Front",
+      "title": "Armageddon Gigolo",
+      "oldUrl": "https://coverartarchive.org/release-group/abee4bc2-8ad5-3f64-a8eb-8367ecb79873/front-250",
+      "newUrl": "/covers/a074.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a076",
+      "artist": "The Tallest Man on Earth",
+      "title": "The Wild Hunt",
+      "oldUrl": "https://coverartarchive.org/release-group/00e8b205-0049-457c-a266-5f57968ee66f/front-250",
+      "newUrl": "/covers/a076.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a079",
+      "artist": "Television",
+      "title": "Marquee Moon",
+      "oldUrl": "https://coverartarchive.org/release-group/2b9f99d8-becf-3fc3-86a6-2bdd4cef93fe/front-250",
+      "newUrl": "/covers/a079.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a093",
+      "artist": "toe",
+      "title": "The Book About My Idle Plot on a Vague Anxiety",
+      "oldUrl": "https://coverartarchive.org/release-group/ba24af71-9a64-4e8f-b3a5-ffb8c5fd9f40/front-250",
+      "newUrl": "/covers/a093.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a094",
+      "artist": "Explosions in the Sky",
+      "title": "The Earth Is Not a Cold Dead Place",
+      "oldUrl": "https://coverartarchive.org/release-group/dfc9abdd-b9b8-3cea-b760-cb620e20825e/front-250",
+      "newUrl": "/covers/a094.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a095",
+      "artist": "Lush",
+      "title": "Split",
+      "oldUrl": "https://coverartarchive.org/release-group/150b59e4-9f69-31e9-b6ae-f05512b71580/front-250",
+      "newUrl": "/covers/a095.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a097",
+      "artist": "You Slut!",
+      "title": "Critical Meat",
+      "oldUrl": "https://coverartarchive.org/release-group/2bef89e3-5a13-3759-823c-15f9b46073f1/front-250",
+      "newUrl": "/covers/a097.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a100",
+      "artist": "Tom Waits",
+      "title": "Mule Variations",
+      "oldUrl": "https://coverartarchive.org/release-group/be821a7a-4a19-3062-9ca6-8d07a658bc10/front-250",
+      "newUrl": "/covers/a100.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a101",
+      "artist": "The Clash",
+      "title": "London Calling",
+      "oldUrl": "https://coverartarchive.org/release-group/68cd609c-112c-3240-b6e4-9daa51e1f0a7/front-250",
+      "newUrl": "/covers/a101.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a102",
+      "artist": "King Crimson",
+      "title": "In the Court of the Crimson King",
+      "oldUrl": "https://coverartarchive.org/release-group/5b645d87-bacf-4f25-85b3-bcb9fc9d8dc4/front-250",
+      "newUrl": "/covers/a102.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a112",
+      "artist": "Massive Attack",
+      "title": "Blue Lines",
+      "oldUrl": "https://coverartarchive.org/release-group/8b6f133a-2fdf-3cc2-b84d-1c889adc0939/front-250",
+      "newUrl": "/covers/a112.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a115",
+      "artist": "Clams Casino",
+      "title": "Instrumentals",
+      "oldUrl": "https://coverartarchive.org/release-group/3bf3c136-a31b-4daa-b3dc-42e0fa26effe/front-250",
+      "newUrl": "/covers/a115.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a116",
+      "artist": "Washed Out",
+      "title": "Life of Leisure",
+      "oldUrl": "https://coverartarchive.org/release-group/33c60c9a-2497-4dd4-8316-6bcddcce3660/front-250",
+      "newUrl": "/covers/a116.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a118",
+      "artist": "Pet Shop Boys",
+      "title": "Please",
+      "oldUrl": "https://coverartarchive.org/release-group/4bb45b34-c884-3179-a518-2cabdc8e7210/front-250",
+      "newUrl": "/covers/a118.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a119",
+      "artist": "SBTRKT",
+      "title": "SBTRKT",
+      "oldUrl": "https://coverartarchive.org/release-group/1bdd4873-d334-47c7-85ab-1ce38e37cb69/front-250",
+      "newUrl": "/covers/a119.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a120",
+      "artist": "Emancipator",
+      "title": "Safe in the Steep Cliffs",
+      "oldUrl": "https://coverartarchive.org/release-group/f1c36c42-d9c3-4d86-a0b0-a20eedabcc8b/front-250",
+      "newUrl": "/covers/a120.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a123",
+      "artist": "Venetian Snares",
+      "title": "Rossz csillag alatt született",
+      "oldUrl": "https://coverartarchive.org/release-group/e01c7844-8189-38a3-8a45-af2bcf480531/front-250",
+      "newUrl": "/covers/a123.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a125",
+      "artist": "Manuel Göttsching",
+      "title": "E2-E4",
+      "oldUrl": "https://coverartarchive.org/release-group/d8aace87-4b8a-403e-bddb-41e18d5c1e04/front-250",
+      "newUrl": "/covers/a125.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a126",
+      "artist": "Midori Takada",
+      "title": "Through the Looking Glass",
+      "oldUrl": "https://coverartarchive.org/release-group/b6bc0e8a-ef2c-4892-8c5c-d9e5df96b43d/front-250",
+      "newUrl": "/covers/a126.jpg",
+      "source": "itunes"
+    },
+    {
+      "id": "a130",
+      "artist": "The Knife",
+      "title": "Silent Shout",
+      "oldUrl": "https://coverartarchive.org/release-group/8b39b099-3676-326f-bcef-112fea1e8cb7/front-250",
+      "newUrl": "/covers/a130.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a135",
+      "artist": "D Train",
+      "title": "Music",
+      "oldUrl": "https://coverartarchive.org/release-group/a3d1df5f-ca94-3fd6-be51-5bc889410603/front-250",
+      "newUrl": "/covers/a135.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a137",
+      "artist": "Arthur Russell",
+      "title": "Love Is Overtaking Me",
+      "oldUrl": "https://coverartarchive.org/release-group/f08d9681-9870-35ca-adcc-6a830f9650f9/front-250",
+      "newUrl": "/covers/a137.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a139",
+      "artist": "Bob Moses",
+      "title": "Days Gone By",
+      "oldUrl": "https://coverartarchive.org/release-group/4bce617f-6389-48a2-a02a-24fb3dbe67be/front-250",
+      "newUrl": "/covers/a139.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a140",
+      "artist": "DJ Shadow",
+      "title": "Endtroducing",
+      "oldUrl": "https://coverartarchive.org/release-group/31ab039c-2155-4b39-813e-098f67752958/front-250",
+      "newUrl": "/covers/a140.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a145",
+      "artist": "Boards of Canada",
+      "title": "Music Has the Right to Children",
+      "oldUrl": "https://coverartarchive.org/release-group/17d74d52-c92b-3b8d-9f87-218ab2d1c4a0/front-250",
+      "newUrl": "/covers/a145.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a149",
+      "artist": "Charlie",
+      "title": "Spacer Woman",
+      "oldUrl": "https://coverartarchive.org/release-group/ba677a25-4445-32e6-89d4-6d6e1ca527d8/front-250",
+      "newUrl": "/covers/a149.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a160",
+      "artist": "Bowery Electric",
+      "title": "Beat",
+      "oldUrl": "https://coverartarchive.org/release-group/ab1b6a2e-5a1f-3844-a1ec-7e283427fc2e/front-250",
+      "newUrl": "/covers/a160.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a162",
+      "artist": "Einstürzende Neubauten",
+      "title": "Kollaps",
+      "oldUrl": "https://coverartarchive.org/release-group/5fc08a84-d9f5-3795-bf98-0abb5a8428bd/front-250",
+      "newUrl": "/covers/a162.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a167",
+      "artist": "Justin Timberlake",
+      "title": "The 20/20 Experience",
+      "oldUrl": "https://coverartarchive.org/release-group/deae6fc2-a675-4f35-9565-d2aaea4872c7/front-250",
+      "newUrl": "/covers/a167.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a168",
+      "artist": "Vampire Weekend",
+      "title": "Contra",
+      "oldUrl": "https://coverartarchive.org/release-group/6799fd76-db3d-43bd-aa91-dffae5c4d65b/front-250",
+      "newUrl": "/covers/a168.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a173",
+      "artist": "The Weeknd",
+      "title": "House of Balloons",
+      "oldUrl": "https://coverartarchive.org/release-group/6fe82196-df5d-4938-aa39-920df5b4517d/front-250",
+      "newUrl": "/covers/a173.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a174",
+      "artist": "Françoise Hardy",
+      "title": "Le temps de l'amour",
+      "oldUrl": "https://coverartarchive.org/release-group/e6c96903-b706-3838-947b-c3d21a760884/front-250",
+      "newUrl": "/covers/a174.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a175",
+      "artist": "Regina Spektor",
+      "title": "Après Moi",
+      "oldUrl": "https://coverartarchive.org/release-group/473691ea-841e-3427-9fa4-63f64fd048ce/front-250",
+      "newUrl": "/covers/a175.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a182",
+      "artist": "Wilco",
+      "title": "Yankee Hotel Foxtrot",
+      "oldUrl": "https://coverartarchive.org/release-group/95f2ba4b-2dd9-38d1-8158-a416a391489c/front-250",
+      "newUrl": "/covers/a182.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a185",
+      "artist": "Battles",
+      "title": "Mirrored",
+      "oldUrl": "https://coverartarchive.org/release-group/4fb19c93-dc39-3f09-9859-a4a4de2cfa85/front-250",
+      "newUrl": "/covers/a185.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a188",
+      "artist": "Cap'n Jazz",
+      "title": "Analphabetapolothology",
+      "oldUrl": "https://coverartarchive.org/release-group/141cf5a3-857c-387d-a99c-2937dc21b1bb/front-250",
+      "newUrl": "/covers/a188.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a190",
+      "artist": "Death in June",
+      "title": "All Pigs Must Die",
+      "oldUrl": "https://coverartarchive.org/release-group/b99f8efa-8ecf-372c-86c8-8da0a4b6efdf/front-250",
+      "newUrl": "/covers/a190.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a192",
+      "artist": "Flying Lotus",
+      "title": "Cosmogramma",
+      "oldUrl": "https://coverartarchive.org/release-group/ddae2c76-1433-4a9a-be05-3447bda75eee/front-250",
+      "newUrl": "/covers/a192.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a198",
+      "artist": "The Libertines",
+      "title": "The Libertines",
+      "oldUrl": "https://coverartarchive.org/release-group/95524ec1-dfa4-3da0-8e45-6ef9d229a2e2/front-250",
+      "newUrl": "/covers/a198.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a201",
+      "artist": "Neurosis",
+      "title": "The Eye of Every Storm",
+      "oldUrl": "https://coverartarchive.org/release-group/9f7c97c6-0fdf-3b29-86bb-af8d1c866acf/front-250",
+      "newUrl": "/covers/a201.jpg",
+      "source": "itunes"
+    },
+    {
+      "id": "a202",
+      "artist": "New Order",
+      "title": "Power, Corruption & Lies",
+      "oldUrl": "https://coverartarchive.org/release-group/16cc9dfc-594d-3fb9-b789-3e1bfcb6f9f8/front-250",
+      "newUrl": "/covers/a202.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a203",
+      "artist": "Of Monsters and Men",
+      "title": "My Head Is an Animal",
+      "oldUrl": "https://coverartarchive.org/release-group/b7ac3c3e-095e-4bcf-94f9-694ca175b79d/front-250",
+      "newUrl": "/covers/a203.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a225",
+      "artist": "The Vaccines",
+      "title": "What Did You Expect From The Vaccines?",
+      "oldUrl": "https://coverartarchive.org/release-group/44ffa53b-e141-4a00-8153-d9f33c92e5a6/front-250",
+      "newUrl": "/covers/a225.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a227",
+      "artist": "Letta Mbulu",
+      "title": "In the Music the Village Never Ends",
+      "oldUrl": "https://coverartarchive.org/release-group/3d33eccd-db45-459e-80d7-eb7c2e1f3c4e/front-250",
+      "newUrl": "/covers/a227.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a228",
+      "artist": "Holograms",
+      "title": "Holograms",
+      "oldUrl": "https://coverartarchive.org/release-group/16aa450b-f2fb-4cbe-8fea-17ea599ee2f0/front-250",
+      "newUrl": "/covers/a228.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a229",
+      "artist": "Grace Jones",
+      "title": "Nightclubbing",
+      "oldUrl": "https://coverartarchive.org/release-group/8a0fff99-479d-3fe3-849f-0ddc8d22d304/front-250",
+      "newUrl": "/covers/a229.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a257",
+      "artist": "Mogwai",
+      "title": "Young Team",
+      "oldUrl": "https://coverartarchive.org/release-group/8cc9da13-a1b3-3865-9587-a46f7599982f/front-250",
+      "newUrl": "/covers/a257.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a267",
+      "artist": "The Feelies",
+      "title": "Crazy Rhythms",
+      "oldUrl": "https://coverartarchive.org/release-group/0e1245bc-b370-32ec-b39d-ec746be808fc/front-250",
+      "newUrl": "/covers/a267.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a268",
+      "artist": "Кино",
+      "title": "Чёрный альбом",
+      "oldUrl": "https://coverartarchive.org/release-group/ade86acf-8b9f-35ca-a4fa-3bd32b196513/front-250",
+      "newUrl": "/covers/a268.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a272",
+      "artist": "The Soft Boys",
+      "title": "Underwater Moonlight",
+      "oldUrl": "https://coverartarchive.org/release-group/d9046296-1811-3504-8199-4a557cf97872/front-250",
+      "newUrl": "/covers/a272.jpg",
+      "source": "itunes"
+    },
+    {
+      "id": "a273",
+      "artist": "Darkthrone",
+      "title": "Transilvanian Hunger",
+      "oldUrl": "https://coverartarchive.org/release-group/bc9a4ab3-2ce0-3a49-b48f-3742169d0636/front-250",
+      "newUrl": "/covers/a273.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a274",
+      "artist": "Summoning",
+      "title": "Dol Guldur",
+      "oldUrl": "https://coverartarchive.org/release-group/eed7c581-b1a9-3265-a12c-c10b48e63b86/front-250",
+      "newUrl": "/covers/a274.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a278",
+      "artist": "A Place to Bury Strangers",
+      "title": "Exploding Head",
+      "oldUrl": "https://coverartarchive.org/release-group/7d2eea0d-eb5b-4308-b833-7af4f69cf6bf/front-250",
+      "newUrl": "/covers/a278.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a279",
+      "artist": "The Pop Group",
+      "title": "For How Much Longer Do We Tolerate Mass Murder?",
+      "oldUrl": "https://coverartarchive.org/release-group/383666d5-c225-31e4-9091-3276c9e4d7aa/front-250",
+      "newUrl": "/covers/a279.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a284",
+      "artist": "Mute Beat",
+      "title": "In Dub",
+      "oldUrl": "https://coverartarchive.org/release-group/ea7c501b-5b7d-4dbb-a107-d87a83a6ff18/front-250",
+      "newUrl": "/covers/a284.jpg",
+      "source": "itunes"
+    },
+    {
+      "id": "a285",
+      "artist": "Gétatchèw Mèkurya",
+      "title": "Éthiopiques 14",
+      "oldUrl": "https://coverartarchive.org/release-group/035e4e3e-9083-38c0-89d2-5213d06bb2a7/front-250",
+      "newUrl": "/covers/a285.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a287",
+      "artist": "The Replacements",
+      "title": "Let It Be",
+      "oldUrl": "https://coverartarchive.org/release-group/2c644807-3b5d-39d4-8c65-dec603bf3f3a/front-250",
+      "newUrl": "/covers/a287.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a288",
+      "artist": "Parquet Courts",
+      "title": "Wide Awake!",
+      "oldUrl": "https://coverartarchive.org/release-group/053742a1-ac6a-4a0d-ad40-d1d3b904d5c9/front-250",
+      "newUrl": "/covers/a288.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a290",
+      "artist": "Ty Segall",
+      "title": "Melted",
+      "oldUrl": "https://coverartarchive.org/release-group/88aeacfc-9212-42fe-bdda-428292683967/front-250",
+      "newUrl": "/covers/a290.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a292",
+      "artist": "Pantera",
+      "title": "Vulgar Display of Power",
+      "oldUrl": "https://coverartarchive.org/release-group/814e0b20-6884-31c5-9d99-d215f048cfd6/front-250",
+      "newUrl": "/covers/a292.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a310",
+      "artist": "Hi-Fi",
+      "title": "Первый контакт",
+      "oldUrl": "https://coverartarchive.org/release-group/f3390ac0-4137-3018-8fbb-6bf10a2d3973/front-250",
+      "newUrl": "/covers/a310.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a318",
+      "artist": "George Clinton",
+      "title": "Computer Games",
+      "oldUrl": "https://coverartarchive.org/release-group/69c24df5-fd91-3765-9ad5-f8172f48a91c/front-250",
+      "newUrl": "/covers/a318.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a319",
+      "artist": "Anthony Naples",
+      "title": "Orbs",
+      "oldUrl": "https://coverartarchive.org/release-group/4bb73485-fc0c-4b9b-8d83-2cd513ca2834/front-250",
+      "newUrl": "/covers/a319.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a322",
+      "artist": "Childish Gambino",
+      "title": "Because the Internet",
+      "oldUrl": "https://coverartarchive.org/release-group/f7b59bee-62d7-4bc8-ad47-cda988cd8ded/front-250",
+      "newUrl": "/covers/a322.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a323",
+      "artist": "Drexciya",
+      "title": "Grava 4",
+      "oldUrl": "https://coverartarchive.org/release-group/f61f9c53-a11c-32ba-843a-bd8bedc0f422/front-250",
+      "newUrl": "/covers/a323.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a324",
+      "artist": "DJ Krush",
+      "title": "Jaku",
+      "oldUrl": "https://coverartarchive.org/release-group/ce4dbbc0-76ee-3942-9d8f-12bde9ca1882/front-250",
+      "newUrl": "/covers/a324.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a325",
+      "artist": "Gorillaz",
+      "title": "Gorillaz",
+      "oldUrl": "https://coverartarchive.org/release-group/86c5222a-72cb-4698-871e-4b34be5eb368/front-250",
+      "newUrl": "/covers/a325.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a328",
+      "artist": "Mew",
+      "title": "And the Glass Handed Kites",
+      "oldUrl": "https://coverartarchive.org/release-group/0f025d54-ab97-3e83-8360-efa6999f6e7a/front-250",
+      "newUrl": "/covers/a328.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a329",
+      "artist": "Steve Reich",
+      "title": "Music for 18 Musicians",
+      "oldUrl": "https://coverartarchive.org/release-group/c856fe75-3c80-3ce3-98a6-d03f06aa6b3c/front-250",
+      "newUrl": "/covers/a329.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a330",
+      "artist": "Ryuichi Sakamoto",
+      "title": "Thousand Knives",
+      "oldUrl": "https://coverartarchive.org/release-group/055ff9c3-1293-4b9f-bb83-5cd49bd7b90c/front-250",
+      "newUrl": "/covers/a330.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a333",
+      "artist": "Scientist",
+      "title": "Dance of the Vampires",
+      "oldUrl": "https://coverartarchive.org/release-group/ea7e7cbb-73f2-3d39-b17c-584486d94c9c/front-250",
+      "newUrl": "/covers/a333.jpg",
+      "source": "itunes"
+    },
+    {
+      "id": "a336",
+      "artist": "Cranes",
+      "title": "Loved",
+      "oldUrl": "https://coverartarchive.org/release-group/07c97bca-9823-395b-ac11-7dd9b7acc14a/front-250",
+      "newUrl": "/covers/a336.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a337",
+      "artist": "Sun Kil Moon",
+      "title": "Benji",
+      "oldUrl": "https://coverartarchive.org/release-group/9e14617c-3842-4d5f-bef4-16b38f2c9f4e/front-250",
+      "newUrl": "/covers/a337.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a341",
+      "artist": "Arctic Monkeys",
+      "title": "Whatever People Say I Am, That's What I'm Not",
+      "oldUrl": "https://coverartarchive.org/release-group/6c9c4985-3628-3070-b956-b538f30c9bea/front-250",
+      "newUrl": "/covers/a341.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a344",
+      "artist": "Bdrmm",
+      "title": "I Don't Know",
+      "oldUrl": "https://coverartarchive.org/release-group/74b3c94e-07ba-42cd-a5ae-ff3857c9bf50/front-250",
+      "newUrl": "/covers/a344.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a351",
+      "artist": "The Pharcyde",
+      "title": "Labcabincalifornia",
+      "oldUrl": "https://coverartarchive.org/release-group/d0dc0be5-53ec-3810-8683-ba1dfac644f8/front-250",
+      "newUrl": "/covers/a351.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a353",
+      "artist": "Blind Guardian",
+      "title": "Nightfall in Middle-Earth",
+      "oldUrl": "https://coverartarchive.org/release-group/3a5d9bb8-8e19-379d-b294-ee8fcf743f77/front-250",
+      "newUrl": "/covers/a353.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a355",
+      "artist": "Slipknot",
+      "title": "All Hope Is Gone",
+      "oldUrl": "https://coverartarchive.org/release-group/70a99420-99c7-3f0c-afda-ebaafb0d31b3/front-250",
+      "newUrl": "/covers/a355.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a356",
+      "artist": "Dinosaur Jr",
+      "title": "You're Living All Over Me",
+      "oldUrl": "https://coverartarchive.org/release-group/4ff9cf5b-f0ae-3cd9-ac2f-b571839e4205/front-250",
+      "newUrl": "/covers/a356.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a357",
+      "artist": "The Slits",
+      "title": "Cut",
+      "oldUrl": "https://coverartarchive.org/release-group/116b94a2-4361-3ec2-af92-270d97dc10f9/front-250",
+      "newUrl": "/covers/a357.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a359",
+      "artist": "White Stripes",
+      "title": "Get Behind Me Satan",
+      "oldUrl": "https://coverartarchive.org/release-group/e6960f09-7b61-370e-9f42-71bb4be41af1/front-250",
+      "newUrl": "/covers/a359.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a368",
+      "artist": "Maximum Joy",
+      "title": "Stretch",
+      "oldUrl": "https://coverartarchive.org/release-group/fa2e8301-783a-4576-a6ce-f81dc2a7c908/front-250",
+      "newUrl": "/covers/a368.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a375",
+      "artist": "Жанна Агузарова",
+      "title": "Жанна Агузарова",
+      "oldUrl": "https://coverartarchive.org/release-group/01f27e92-99fb-37e2-bc1d-6a91f53e83ec/front-250",
+      "newUrl": "/covers/a375.jpg",
+      "source": "itunes"
+    },
+    {
+      "id": "a377",
+      "artist": "А-Студио",
+      "title": "Джулия",
+      "oldUrl": "https://coverartarchive.org/release-group/fa9f15e6-e590-40ff-a69a-ea5f95a1c729/front-250",
+      "newUrl": "/covers/a377.jpg",
+      "source": "itunes"
+    },
+    {
+      "id": "a382",
+      "artist": "Despised Icon",
+      "title": "Day of Mourning",
+      "oldUrl": "https://coverartarchive.org/release-group/426d2452-aa2f-4d18-b7cb-f3885ea1868f/front-250",
+      "newUrl": "/covers/a382.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a384",
+      "artist": "Chet Baker",
+      "title": "Chet Baker Sings",
+      "oldUrl": "https://coverartarchive.org/release-group/a0aabd83-2341-335d-a0d6-e0ea609b0b3f/front-250",
+      "newUrl": "/covers/a384.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a385",
+      "artist": "Elvis Costello",
+      "title": "This Year's Model",
+      "oldUrl": "https://coverartarchive.org/release-group/5e8117f4-a87f-3732-be5f-313c7e5b308d/front-250",
+      "newUrl": "/covers/a385.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a404",
+      "artist": "Moon Duo",
+      "title": "Mazes",
+      "oldUrl": "https://coverartarchive.org/release-group/1eb09f2f-640a-4373-8bfd-1f0a7db54623/front-250",
+      "newUrl": "/covers/a404.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a405",
+      "artist": "Tom Tom Club",
+      "title": "Tom Tom Club",
+      "oldUrl": "https://coverartarchive.org/release-group/9a01f6b5-61f6-3b10-b1ab-735359fc407b/front-250",
+      "newUrl": "/covers/a405.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a407",
+      "artist": "Bluestaeb & S. Fidelity",
+      "title": "Underground Canopy",
+      "oldUrl": "https://coverartarchive.org/release-group/798ca87a-1bf6-4d30-ba2c-89d3766f3cec/front-250",
+      "newUrl": "/covers/a407.jpg",
+      "source": "itunes"
+    },
+    {
+      "id": "a422",
+      "artist": "Chameleons",
+      "title": "Script of the Bridge",
+      "oldUrl": "https://coverartarchive.org/release-group/800508e1-5174-3f58-9fb5-35f469b677ed/front-250",
+      "newUrl": "/covers/a422.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a423",
+      "artist": "Sad Lovers & Giants",
+      "title": "Epic Garden Music",
+      "oldUrl": "https://coverartarchive.org/release-group/dd4bd181-6df4-3c36-9ce8-58c85ddb605d/front-250",
+      "newUrl": "/covers/a423.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a424",
+      "artist": "Утро",
+      "title": "Утро",
+      "oldUrl": "https://coverartarchive.org/release-group/e70dab2f-67d5-4dbe-986d-cab62c720f55/front-250",
+      "newUrl": "/covers/a424.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a425",
+      "artist": "Cul de Sac",
+      "title": "China Gate",
+      "oldUrl": "https://coverartarchive.org/release-group/af5c2d7a-95bc-33d7-b572-ae023b9ddff6/front-250",
+      "newUrl": "/covers/a425.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a433",
+      "artist": "Yoko Kanno",
+      "title": "Cowboy Bebop OST",
+      "oldUrl": "https://coverartarchive.org/release-group/5e8aba3f-4fd4-4171-beef-55ee91bb9c51/front-250",
+      "newUrl": "/covers/a433.jpg",
+      "source": "itunes"
+    },
+    {
+      "id": "a441",
+      "artist": "Kosmischer Läufer",
+      "title": "Volume Four",
+      "oldUrl": "https://coverartarchive.org/release-group/491a71b0-48b4-481a-bd1f-2ec5a5c6e799/front-250",
+      "newUrl": "/covers/a441.jpg",
+      "source": "itunes"
+    },
+    {
+      "id": "a442",
+      "artist": "Susumu Yokota",
+      "title": "The Boy and the Tree",
+      "oldUrl": "https://coverartarchive.org/release-group/d3fda1a8-84ec-3f4f-a59e-ea81515ccc85/front-250",
+      "newUrl": "/covers/a442.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a443",
+      "artist": "Disco Inferno",
+      "title": "D.I. Go Pop",
+      "oldUrl": "https://coverartarchive.org/release-group/34cc9df4-a173-3163-b30e-ad3fab1fdaf0/front-250",
+      "newUrl": "/covers/a443.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a447",
+      "artist": "Hooverphonic",
+      "title": "A New Stereophonic Sound Spectacular",
+      "oldUrl": "https://coverartarchive.org/release-group/65810f00-a38e-4e2c-bdbe-77f1e078989b/front-250",
+      "newUrl": "/covers/a447.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a448",
+      "artist": "Aphex Twin",
+      "title": "Drukqs",
+      "oldUrl": "https://coverartarchive.org/release-group/87f1a316-510f-36c3-9f2c-38230b0e56e0/front-250",
+      "newUrl": "/covers/a448.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a449",
+      "artist": "Nightmares on Wax",
+      "title": "Smokers Delight",
+      "oldUrl": "https://coverartarchive.org/release-group/c4482347-92da-3a29-8ed6-78655ed02f66/front-250",
+      "newUrl": "/covers/a449.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a467",
+      "artist": "King Gizzard and the Lizard Wizard",
+      "title": "12 Bar Bruise",
+      "oldUrl": "https://coverartarchive.org/release-group/c30b3cc8-cb68-471b-aa94-51c8c23a3c22/front-250",
+      "newUrl": "/covers/a467.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a470",
+      "artist": "Condry Ziqubu",
+      "title": "Gorilla Man",
+      "oldUrl": "https://coverartarchive.org/release-group/7c82a868-36f5-456c-85a4-a9b6cbf84658/front-250",
+      "newUrl": "/covers/a470.jpg",
+      "source": "itunes"
+    },
+    {
+      "id": "a476",
+      "artist": "Tangerine Dream",
+      "title": "Phaedra",
+      "oldUrl": "https://coverartarchive.org/release-group/866c88fa-a18b-3739-9814-2ad215e5e11a/front-250",
+      "newUrl": "/covers/a476.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a477",
+      "artist": "Thelonious Monk",
+      "title": "Brilliant Corners",
+      "oldUrl": "https://coverartarchive.org/release-group/764d0d9e-68b1-39fe-b1d1-eda104926777/front-250",
+      "newUrl": "/covers/a477.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a482",
+      "artist": "Pink Turns Blue",
+      "title": "If Two Worlds Kiss",
+      "oldUrl": "https://coverartarchive.org/release-group/e192c749-1318-318e-924b-7ee4dfb6180c/front-250",
+      "newUrl": "/covers/a482.jpg",
+      "source": "deezer"
+    },
+    {
+      "id": "a489",
+      "artist": "The Smiths",
+      "title": "The Queen Is Dead",
+      "oldUrl": "https://coverartarchive.org/release-group/d8dde278-482c-3cc8-a530-fea70476f3a5/front-250",
+      "newUrl": "/covers/a489.jpg",
+      "source": "deezer"
+    }
+  ],
+  "missing": [
+    {
+      "id": "a363",
+      "artist": "АК-47",
+      "title": "Megapolice",
+      "error": "no source found"
+    },
+    {
+      "id": "a497",
+      "artist": "Hiromasa Suzuki",
+      "title": "Skip Step Colgen",
+      "error": "no source found"
+    },
+    {
+      "id": "a117",
+      "artist": "Kraftwerk",
+      "title": "Electric Cafe",
+      "error": "no source found"
+    },
+    {
+      "id": "a122",
+      "artist": "Effective Force",
+      "title": "Diamond Bullet",
+      "error": "no source found"
+    },
+    {
+      "id": "a133",
+      "artist": "Caribou",
+      "title": "Can't Do Without You",
+      "error": "no source found"
+    },
+    {
+      "id": "a231",
+      "artist": "Fela Kuti",
+      "title": "Roforofo Night",
+      "error": "no source found"
+    },
+    {
+      "id": "a332",
+      "artist": "Союз",
+      "title": "Сила ветра",
+      "error": "no source found"
+    },
+    {
+      "id": "a364",
+      "artist": "Comsat Angels",
+      "title": "Sleep No More",
+      "error": "no source found"
+    },
+    {
+      "id": "a444",
+      "artist": "James Ferraro",
+      "title": "Marble Surf",
+      "error": "no source found"
+    },
+    {
+      "id": "a463",
+      "artist": "DJ Metatron",
+      "title": "This Is Not",
+      "error": "no source found"
+    }
+  ]
+}

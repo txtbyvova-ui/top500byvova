@@ -3,14 +3,23 @@
 @tailwind utilities;
 
 :root {
-  --background: #0a0a0a;
+  --background: #08080a;
   --foreground: #ededed;
 }
 
 body {
   color: var(--foreground);
-  background: var(--background);
-  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  background: radial-gradient(ellipse at top, #15151a 0%, #08080a 75%) fixed;
+}
+
+/* ── Film grain overlay (static SVG noise) ── */
+.film-grain {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.04;
+  mix-blend-mode: overlay;
 }
 
 /* Custom scrollbar */
@@ -44,6 +53,24 @@ body {
 .genre-section-visible {
   opacity: 1;
 }
+
+/* Album cover 3D tilt */
+.album-cover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+  position: relative;
+  overflow: hidden;
+}
+.album-cover:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5), 0 0 40px rgba(var(--glow, 255 255 255), 0.15);
+}
+.album-cover:active {
+  transform: scale(0.98);
+  transition-duration: 0.1s;
+}
+.album-cover::after { display: none; }
 
 /* Prevent body scroll when modal is open */
 body.modal-open {

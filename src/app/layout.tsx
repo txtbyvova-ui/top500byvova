@@ -2,20 +2,27 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
 const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
+  variable: "--font-mono",
+  weight: "100 900",
+});
+
+const assistant = localFont({
+  src: "../../public/Assistant/Assistant-VariableFont_wght.ttf",
+  variable: "--font-body",
+  weight: "200 800",
+});
+
+const mplus1 = localFont({
+  src: "../../public/M_PLUS_1/MPLUS1-VariableFont_wght.ttf",
+  variable: "--font-heading",
   weight: "100 900",
 });
 
 export const metadata: Metadata = {
   title: "Vova Egorov TOP 500",
-  description: "A curated collection of 440 essential albums",
+  description: "A curated collection of 500 essential albums",
 };
 
 export default function RootLayout({
@@ -26,7 +33,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${assistant.variable} ${mplus1.variable} ${geistMono.variable} antialiased`}
+        style={{ fontFamily: "var(--font-body), sans-serif" }}
       >
         {children}
       </body>
